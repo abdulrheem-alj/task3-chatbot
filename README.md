@@ -10,9 +10,9 @@
 شات بوت هو عبارة عن  مساعدة في حل مشكلات الصفحة
 
 
-![alt text](https://github.com/abdulrheem-alj/task3-chatbot/blob/main/imeg/chatbot1.JPG) 
+![alt text](https://github.com/abdulrheem-alj/task3-chatbot/blob/main/img/chatbot1.JPG) 
 
 
-![alt text](https://github.com/abdulrheem-alj/task3-chatbot/blob/main/imeg/chat.JPG) 
+![alt text](https://github.com/abdulrheem-alj/task3-chatbot/blob/main/img/chat.JPG) 
 
 
