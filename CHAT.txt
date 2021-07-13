@@ -1,0 +1,234 @@
+{
+  "intents": [
+    {
+      "intent": "تاكيد",
+      "examples": [
+        {
+          "text": "ايوة"
+        },
+        {
+          "text": "نعم"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "جواب",
+      "examples": [
+        {
+          "text": "حدث الصفحة"
+        },
+        {
+          "text": "حدث الصفحة مرة ثانية"
+        },
+        {
+          "text": "سيتم التعامل مع المشكلة"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "سؤال",
+      "examples": [
+        {
+          "text": "الازرار لا تعمل"
+        },
+        {
+          "text": "الموقع معلق"
+        },
+        {
+          "text": "لاتعمل"
+        },
+        {
+          "text": "لوحة التحكم لا تستجيب"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "لايوجد",
+      "examples": [
+        {
+          "text": "سلام"
+        },
+        {
+          "text": "لا"
+        },
+        {
+          "text": "لايوجد"
+        },
+        {
+          "text": "مافي"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "حدث الصفحة"
+              },
+              {
+                "text": "حدث الصفحة مرة ثانية"
+              },
+              {
+                "text": "سيتم التعامل مع المشكلة"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#سؤال",
+      "dialog_node": "node_10_1626110291960",
+      "previous_sibling": "node_5_1626110620140"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "الى اللقاء"
+              },
+              {
+                "text": "سلام"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#لايوجد",
+      "dialog_node": "node_5_1626110620140",
+      "previous_sibling": "مرحبا"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "حدث الصفحة"
+              },
+              {
+                "text": "حدث مرة ثانية"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#جواب",
+      "dialog_node": "node_6_1626110342667",
+      "previous_sibling": "node_10_1626110291960"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "ماهي؟"
+              },
+              {
+                "text": "ماهو نوع المشكلة؟"
+              },
+              {
+                "text": "نشكرك"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#تاكيد",
+      "dialog_node": "node_9_1626110376953",
+      "previous_sibling": "node_6_1626110342667"
+    },
+    {
+      "type": "standard",
+      "title": "أي شيء آخر",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "لم أفهم، يمكنك محاولة اعادة الصياغة"
+              },
+              {
+                "text": "هل يمكنك اعادة صياغة عبارتك؟ أنا لا فهم"
+              },
+              {
+                "text": "لم أفهم قصدك"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "أي شيء آخر",
+      "previous_sibling": "node_9_1626110376953",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "مرحبا",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "هل تريد مساعدة؟"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "مرحبا"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "disambiguation": {
+      "prompt": ":هل قصدت",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "كل ما سبق خطأ"
+    },
+    "human_agent_assist": {
+      "prompt": ":هل قصدت"
+    }
+  },
+  "learning_opt_out": false,
+  "name": "chat",
+  "language": "ar",
+  "description": ""
+}
